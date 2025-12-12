@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Form Showcase</title>
+    <link rel="stylesheet" href="./form.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="form-title">
+        <h1>Заполните поля</h1>
+        <h4>ну пожалуйста</h4>
+      </div>
+
+      <form>
+        <fieldset>
+          <legend>Основное</legend>
+
+          <label for="name">Имя</label>
+          <input type="text" id="name" name="name" placeholder="по паспорту" />
+
+          <label for="color">Цвет вашего настроения</label>
+          <input type="color" id="color" name="color" value="#1023ca" />
+        </fieldset>
+        <fieldset>
+          <legend>Дополнительное</legend>
+
+          <label for="comment">Комментарий</label>
+          <textarea
+            type="comment"
+            id="comment"
+            name="comment"
+            placeholder="Напишите хоть что-нибудь.Если хотите, конечно"
+          ></textarea>
+        </fieldset>
+        <fieldset>
+          <input type="radio" id="radio" name="radio" value="smth" />
+          <label for="radio">Ну а тут просто полежит радиобатон</label>
+
+          <input type="checkbox" id="checkbox" name="checkbox" />
+          <label for="checkbox"
+            >Соглашаюсь на все, что бы вы не придумали и осознаю, что это может означать
+            <a
+              href="https://gramota.ru/biblioteka/spravochniki/spravochnik-po-punktuatsii/chto-ugodno"
+              target="_blank"
+              >что угодно</a
+            >
+          </label>
+        </fieldset>
+
+        <button type="submit" class="submit_btn">Отправить все мои данные</button>
+      </form>
+    </div>
+  </body>
+</html>

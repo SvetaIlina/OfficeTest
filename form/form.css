@@ -1,0 +1,101 @@
+*,
+*:before,
+*:after {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-size: 10px;
+}
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+}
+
+.wrapper {
+  width: 800px;
+  margin: 0 auto;
+  padding: 2rem 4rem 6rem;
+  background-color: #dbdee9;
+}
+
+.form-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  text-shadow: 1px 1px 0px rgb(256, 256, 256);
+}
+h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+h4 {
+  font-size: 1.4rem;
+}
+
+form {
+  margin-top: 2rem;
+  background-color: rgb(255, 255, 255);
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+form::after,
+form::before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  background-color: white;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid #f0f0f0;
+  border-top: none;
+}
+
+form::after {
+  width: 99%;
+  bottom: -4px;
+  box-shadow: 0 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+form::before {
+  width: 98%;
+  bottom: -7px;
+  box-shadow: 0 1px 6px rgb(0, 0, 0);
+}
+
+fieldset {
+  width: 100%;
+  padding: 1rem;
+  position: relative;
+  display: grid;
+  grid-template-columns: 30% 40%;
+  grid-template-rows: repeat(3 1fr);
+  gap: 5px;
+}
+
+fieldset:nth-of-type(2) {
+  background-color: #fff7c4;
+}
+
+legend {
+  font-size: 1.9rem;
+  font-weight: 400;
+  position: relative;
+  float: left;
+}
+
+.inpur_wrapper {
+  width: 100%;
+  gap: 5px;
+  margin-bottom: 0.5rem;
+}
+
+label:nth-child(1) {
+  justify-self: end;
+}
