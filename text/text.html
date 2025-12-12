@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Elements Showcase</title>
+    <link rel="stylesheet" href="./text.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="inner-wrapper">
+        <header>
+          <h1>Алиса в Стране HTML</h1>
+        </header>
+
+        <main>
+          <article>
+            <h2>Глава I: <em>Падение в кроличью нору</em></h2>
+            <section id="intro">
+              <p>
+                Алиса начинала <strong>очень уставать</strong> от сидения на берегу. Она заметила,
+                что кролик достал из жилетного кармана <mark>часы</mark> и воскликнул:
+                <q>Я опаздываю!</q>
+              </p>
+
+              <blockquote cite="https://example.com">
+                <p>Любопытнее и любопытнее! — воскликнула Алиса.</p>
+                <p>— <cite>Льюис Кэрролл</cite></p>
+              </blockquote>
+
+              <h3>Список необходимых вещей:</h3>
+              <ul>
+                <li>Ключик <small>(очень маленький)</small></li>
+                <li>Пузырёк с надписью "ВЫПЕЙ МЕНЯ"></li>
+                <li>Печенье с надписью "СЪЕШЬ МЕНЯ"</li>
+              </ul>
+            </section>
+            <section id="characters">
+              <h3>Персонажи Страны Чудес:</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Персонаж</th>
+                    <th>Особенность</th>
+                    <th>Цитата</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Чеширский Кот</td>
+                    <td>Может исчезать</td>
+                    <td><q>Мы все здесь не в своём уме</q></td>
+                  </tr>
+                  <tr>
+                    <td>Шляпник</td>
+                    <td>Вечное чаепитие</td>
+                    <td><q>Почему ворон похож на стол?</q></td>
+                  </tr>
+                  <tr>
+                    <td>Королева</td>
+                    <td>Любит казнить</td>
+                    <td><q>Отрубить ей голову!</q></td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section id="magic_potion">
+              <h3>Инструкция по изменению роста:</h3>
+              <ol>
+                <li>Найдите волшебный пузырёк</li>
+                <li>Убедитесь, что это <ins>не яд</ins></li>
+                <li>Выпейте содержимое <del>(но не всё сразу)</del></li>
+                <li>Подождите эффекта</li>
+              </ol>
+              <details>
+                <summary>Математическая задача Алисы</summary>
+                <p>
+                  Если я была <var>x</var> сантиметров ростом, а выпив из пузырька стала
+                  <var>y</var> сантиметров, то коэффициент изменения: <var>k = y / x</var>
+                </p>
+                <pre><code>function changeSize(current, coefficient) {
+  return current * coefficient;
+}</code></pre>
+              </details>
+
+              <hr />
+
+              <p>
+                Формула красного зелья: H<sub>2</sub>O + сахар = рост ↑<br />
+                Формула синего зелья: E = mc<sup>2</sup> (относительность роста)
+              </p>
+            </section>
+          </article>
+        </main>
+
+        <footer>
+          <address>Автор: <a href="mailto:alice@wonderland.com">alice@wonderland.com</a></address>
+          <p><small>&copy; 2025 Страна Чудес. Все права защищены.</small></p>
+        </footer>
+      </div>
+      <aside>
+        <h4>Интересный факт:</h4>
+        <p>
+          <dfn>Безумное чаепитие</dfn> — это встреча, которая никогда не заканчивается, потому что
+          время остановилось на <time datetime="18:00">шести часах</time>.
+        </p>
+      </aside>
+    </div>
+  </body>
+</html>
