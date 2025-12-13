@@ -138,10 +138,6 @@ input[type="checkbox"] + label {
 
 input[type="text"] {
   width: 300px;
-}
-
-input[type="text"]::placeholder {
-  width: 300px;
   padding-left: 0.5rem;
 }
 
