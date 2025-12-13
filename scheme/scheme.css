@@ -1,0 +1,246 @@
+*,
+*:before,
+*:after {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+}
+
+.wrapper {
+  background: #2b3138;
+  padding: 40px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scheme-title {
+  margin-left: 15px;
+  margin-bottom: 20px;
+  font-weight: 100;
+  color: #9aa0a6;
+}
+.scheme {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: min-content;
+  gap: 20px;
+  align-items: center;
+  position: relative;
+}
+
+.scheme-item {
+  position: relative;
+  background: #fff;
+  padding: 8px 20px;
+  font-size: 14px;
+  text-align: center;
+  width: 182px;
+}
+
+/* columns */
+
+.scheme-item:nth-child(1) {
+  grid-column: 1;
+  margin-left: 14px;
+}
+
+.scheme-item:nth-child(2),
+.scheme-item:nth-child(6),
+.scheme-item:nth-child(7) {
+  grid-column: 1/3;
+  justify-self: center;
+  margin-left: 15px;
+}
+
+.scheme-item:nth-child(3),
+.scheme-item:nth-child(4),
+.scheme-item:nth-child(5) {
+  grid-column: 2;
+  margin-left: 15px;
+}
+
+.scheme-item:nth-child(n + 8):nth-child(-n + 13) {
+  grid-column: 4;
+}
+
+/* rows */
+
+.scheme-item:nth-child(2),
+.scheme-item:nth-child(10) {
+  grid-row: 3;
+}
+.scheme-item:nth-child(3) {
+  grid-row: 4;
+}
+
+.scheme-item:nth-child(4),
+.scheme-item:nth-child(11) {
+  grid-row: 5;
+}
+.scheme-item:nth-child(5) {
+  grid-row: 8;
+}
+
+.scheme-item:nth-child(6) {
+  grid-row: 9;
+}
+
+.scheme-item:nth-child(7) {
+  grid-row: 10;
+}
+
+.scheme-item:nth-child(8) {
+  grid-row: 1;
+}
+
+.scheme-item:nth-child(9) {
+  grid-row: 2;
+  font-size: 13px;
+}
+
+.scheme-item:nth-child(12) {
+  grid-row: 6;
+}
+.scheme-item:nth-child(13) {
+  grid-row: 7;
+}
+
+/* ----------------
+   LINES
+------------------ */
+
+/* short left-side lines */
+.scheme-item--line::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 17px;
+  height: 1px;
+  background: #9aa0a6;
+  left: -17px;
+}
+
+/* horizontal lines */
+
+.scheme-item:nth-child(4)::after,
+.scheme-item:nth-child(8)::after,
+.scheme-item:nth-child(10)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -455px;
+  width: 455px;
+  height: 1px;
+  background: #9aa0a6;
+}
+
+.scheme-item:nth-child(4)::after {
+  left: 182px;
+  width: 235px;
+}
+
+.scheme-item:nth-child(10)::after {
+  left: -345px;
+  width: 345px;
+}
+
+/* left side rectangle*/
+.scheme-item:nth-child(5)::after,
+.scheme-item:nth-child(7)::after,
+.scheme-item:nth-child(9)::after,
+.scheme-item:nth-child(13)::after {
+  content: "";
+  position: absolute;
+  bottom: 50%;
+  left: -17px;
+  width: 17px;
+  border-left: 1px solid #9aa0a6;
+  border-bottom: 1px solid #9aa0a6;
+}
+
+.scheme-item:nth-child(5)::after {
+  height: 295px;
+}
+
+.scheme-item:nth-child(7)::after {
+  height: 560px;
+}
+
+.scheme-item:nth-child(9)::after {
+  height: 69px;
+}
+
+.scheme-item:nth-child(13)::after {
+  height: 116px;
+}
+
+/* right side rectangle*/
+
+.scheme-item:nth-child(11)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 182px;
+  width: 17px;
+  height: 119px;
+  border-top: 1px solid #9aa0a6;
+  border-bottom: 1px solid #9aa0a6;
+  border-right: 1px solid #9aa0a6;
+}
+
+/* arrow */
+.scheme-item:nth-child(4)::before,
+.scheme-item:nth-child(5)::before,
+.scheme-item:nth-child(7)::before,
+.scheme-item:nth-child(8)::before,
+.scheme-item:nth-child(10)::before,
+.scheme-item:nth-child(11)::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -454px;
+  width: 6px;
+  height: 6px;
+  border-top: 1px solid #9aa0a6;
+  border-left: 1px solid #9aa0a6;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.scheme-item:nth-child(5)::before,
+.scheme-item:nth-child(7)::before {
+  transform: rotate(45deg) translateX(-50%);
+}
+
+.scheme-item:nth-child(4)::before {
+  left: 183px;
+}
+
+.scheme-item:nth-child(5)::before {
+  left: -17px;
+  top: -272px;
+}
+
+.scheme-item:nth-child(7)::before {
+  left: -17px;
+
+  top: -537px;
+}
+.scheme-item:nth-child(10)::before {
+  left: -345px;
+}
+
+.scheme-item:nth-child(11)::before {
+  left: 183px;
+}
