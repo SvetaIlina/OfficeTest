@@ -1,38 +1,4 @@
-const btns = [
-  {
-    parent: "gray-btn-container",
-    bgColor: "#ebebeb",
-    border: "1px solid #afafaf",
-  },
-  {
-    parent: "red-stroke-btn-container",
-    bgColor: "#ebebeb",
-    border: "2px solid #db241f",
-  },
-  {
-    parent: "red-btn-container",
-    bgColor: "#ca130c",
-    textColor: "#fff",
-  },
-  {
-    parent: "arrow-btn-container",
-    bgColor: "#ebebeb",
-    border: "1px solid #afafaf",
-    after: true,
-  },
-  {
-    parent: "green-btn-container",
-    bgColor: "#6e9735",
-    textColor: "#fff",
-  },
-  {
-    parent: "green-stroke-btn-container",
-    bgColor: "#ebebeb",
-    border: "2px solid #6d9735",
-  },
-]
-
-const states = ["btn", "btn--hover", "btn--active", "btn--disabled"]
+import { btns, states } from "./config.js"
 
 function createNode(element, ...classes) {
   const node = document.createElement(element)
@@ -61,6 +27,7 @@ class Button {
 
   buildBtn() {
     const btn = createNode("button", ...this.classes)
+    btn.innerText = this.text
     btn.style.backgroundColor = this.bgColor
 
     if (this.textColor) {
@@ -69,25 +36,22 @@ class Button {
     if (this.border) btn.style.border = this.border
 
     if (this.icon) {
-      const iconEl = this.icon()
-      iconEl.classList.add("btn-icon")
-      btn.append(iconEl)
+      const img = document.createElement("img")
+      img.src = this.icon
+      img.alt = ""
+      img.classList.add("btn-icon")
+      btn.append(img)
     }
 
     if (this.after) {
       const afterEl = document.createElement("span")
-      afterEl.classList.add("after-icon")
+      afterEl.classList.add(this.after)
       btn.append(afterEl)
     }
 
     if (this.icon || this.after) {
       btn.classList.add("btn--flex")
     }
-
-    const textNode = document.createElement("span")
-    textNode.textContent = this.text
-    textNode.classList.add("btn-text")
-    btn.append(textNode)
 
     return btn
   }
@@ -99,9 +63,9 @@ function renderBtn(parent) {
 
   states.forEach((stateClass) => {
     const btn = new Button(
-      ["btn", stateClass],
+      ["btn", stateClass, config.className],
       config.bgColor,
-      "Просмотреть",
+      config.text,
       config.border,
       config.icon,
       config.after,
@@ -112,6 +76,27 @@ function renderBtn(parent) {
   })
 }
 
+function renderActionBtn() {
+  const actionParent = document.getElementsByClassName("action-btn-container")
+  const actionBtn = btns.filter((obj) => obj.parent === "action-btn-container")
+  if (actionBtn.length) {
+    actionBtn.forEach((item) => {
+      const btn = new Button(
+        ["btn", item.className],
+        item.bgColor,
+        item.text,
+        item.border,
+        item.icon,
+        item.after,
+        item.textColor
+      ).buildBtn()
+
+      actionParent[0].append(btn)
+    })
+  }
+}
+
 const parents = document.getElementsByClassName("btn-container")
 
 Array.from(parents).forEach((parent) => renderBtn(parent))
+renderActionBtn()

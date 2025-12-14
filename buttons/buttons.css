@@ -6,6 +6,28 @@
   padding: 0;
 }
 
+.container {
+  display: grid;
+  grid-template-columns: repeat(6, 115px);
+  gap: 20px;
+  width: 1200px;
+  margin: 100px auto;
+}
+
+.btn-container,
+.action-btn-container {
+  display: flex;
+  gap: 20px;
+}
+
+.btn-container {
+  flex-direction: column;
+}
+.action-btn-container {
+  flex-direction: row;
+  grid-column: 1/6;
+}
+
 .btn {
   width: 112px;
   height: 35px;
@@ -17,8 +39,8 @@
 
 .btn--flex {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 5px;
   padding: 8px 13px;
 }
 
@@ -35,16 +57,14 @@
   opacity: 0.5;
 }
 
-.btn-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.large-btn {
+  width: fit-content;
+  white-space: nowrap;
 }
 
 .after-icon {
   position: relative;
   width: 5px;
-  order: 2;
 }
 .after-icon::after {
   content: "";
@@ -59,10 +79,8 @@
   border-left: 6px solid #dc241f;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  width: 1200px;
-  margin: 100px auto;
+.btn-icon {
+  width: 15px;
+  height: 15px;
+  order: -1;
 }
