@@ -57,46 +57,45 @@ class Button {
   }
 }
 
-function renderBtn(parent) {
+function renderButtons(parent) {
   const config = btns.find((i) => i.parent === parent.dataset.id)
   if (!config) return
 
+  config.buttons.forEach((btnConfig) => {
+    if (config.needState) {
+      renderStateButtons(btnConfig, parent)
+    } else {
+      const btn = new Button(
+        ["btn", config.className],
+        btnConfig.bgColor,
+        btnConfig.text,
+        btnConfig.border,
+        btnConfig.icon,
+        btnConfig.after,
+        btnConfig.textColor
+      ).buildBtn()
+
+      parent.append(btn)
+    }
+  })
+}
+
+function renderStateButtons(btnConfig, parent) {
   states.forEach((stateClass) => {
     const btn = new Button(
-      ["btn", stateClass, config.className],
-      config.bgColor,
-      config.text,
-      config.border,
-      config.icon,
-      config.after,
-      config.textColor
+      ["btn", stateClass, btnConfig.className],
+      btnConfig.bgColor,
+      btnConfig.text,
+      btnConfig.border,
+      btnConfig.icon,
+      btnConfig.after,
+      btnConfig.textColor
     ).buildBtn()
 
     parent.append(btn)
   })
 }
 
-function renderActionBtn() {
-  const actionParent = document.getElementsByClassName("action-btn-container")
-  const actionBtn = btns.filter((obj) => obj.parent === "action-btn-container")
-  if (actionBtn.length) {
-    actionBtn.forEach((item) => {
-      const btn = new Button(
-        ["btn", item.className],
-        item.bgColor,
-        item.text,
-        item.border,
-        item.icon,
-        item.after,
-        item.textColor
-      ).buildBtn()
-
-      actionParent[0].append(btn)
-    })
-  }
-}
-
 const parents = document.getElementsByClassName("btn-container")
 
-Array.from(parents).forEach((parent) => renderBtn(parent))
-renderActionBtn()
+Array.from(parents).forEach((parent) => renderButtons(parent))

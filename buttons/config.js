@@ -1,73 +1,73 @@
 export const btns = [
   {
     parent: "gray-btn-container",
-    bgColor: "#ebebeb",
-    border: "1px solid #afafaf",
+    buttons: [{ bgColor: "#ebebeb", border: "1px solid #afafaf" }],
+    needState: true,
   },
   {
     parent: "red-stroke-btn-container",
-    bgColor: "#ebebeb",
-    border: "2px solid #db241f",
+
+    buttons: [{ bgColor: "#ebebeb", border: "2px solid #db241f" }],
+    needState: true,
   },
   {
     parent: "red-btn-container",
-    bgColor: "#ca130c",
-    textColor: "#fff",
+
+    buttons: [{ bgColor: "#ca130c", textColor: "#fff" }],
+    needState: true,
   },
   {
     parent: "arrow-btn-container",
-    bgColor: "#ebebeb",
-    border: "1px solid #afafaf",
-    after: "after-icon",
+
+    buttons: [{ bgColor: "#ebebeb", border: "1px solid #afafaf", after: "after-icon" }],
+    needState: true,
   },
   {
     parent: "green-btn-container",
-    bgColor: "#6e9735",
-    textColor: "#fff",
+
+    buttons: [{ bgColor: "#6e9735", textColor: "#fff" }],
+    needState: true,
   },
   {
     parent: "green-stroke-btn-container",
-    bgColor: "#ebebeb",
-    border: "2px solid #6d9735",
+
+    buttons: [{ bgColor: "#ebebeb", border: "2px solid #6d9735" }],
+    needState: true,
   },
   {
     parent: "action-btn-container",
-    bgColor: "#ebebeb",
-    border: "1px solid #afafaf",
-    text: "Редактировать",
-    icon: "/img/edit.svg",
-    className: "large-btn",
-  },
-  {
-    parent: "action-btn-container",
-    bgColor: "#ebebeb",
-    border: "1px solid #afafaf",
-    text: "Выгрузить в Exel",
-    icon: "/img/export.svg",
-    className: "large-btn",
-  },
-  {
-    parent: "action-btn-container",
-    bgColor: "#ebebeb",
-    border: "1px solid #afafaf",
-    text: "Удалить список",
-    icon: "/img/delete.svg",
-    className: "large-btn",
-  },
-  {
-    parent: "action-btn-container",
-    bgColor: "#ebebeb",
-    border: "1px solid #afafaf",
-    text: "Распечатать",
-    icon: "/img/print.svg",
-    className: "large-btn",
-  },
-  {
-    parent: "action-btn-container",
-    bgColor: "#ebebeb",
-    border: "1px solid #afafaf",
-    text: "Загрузить из файла",
-    icon: "/img/import.svg",
+    buttons: [
+      {
+        bgColor: "#ebebeb",
+        border: "1px solid #afafaf",
+        text: "Редактировать",
+        icon: "/img/edit.svg",
+      },
+      {
+        bgColor: "#ebebeb",
+        border: "1px solid #afafaf",
+        text: "Выгрузить в Exel",
+        icon: "/img/export.svg",
+      },
+      {
+        bgColor: "#ebebeb",
+        border: "1px solid #afafaf",
+        text: "Удалить список",
+        icon: "/img/delete.svg",
+      },
+      {
+        bgColor: "#ebebeb",
+        border: "1px solid #afafaf",
+        text: "Распечатать",
+        icon: "/img/print.svg",
+      },
+      {
+        bgColor: "#ebebeb",
+        border: "1px solid #afafaf",
+        text: "Загрузить из файла",
+        icon: "/img/import.svg",
+      },
+    ],
     className: "large-btn",
   },
 ]
