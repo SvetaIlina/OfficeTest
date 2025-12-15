@@ -10,10 +10,10 @@
 html,
 body {
   height: 100%;
-  font-size: 10px;
 }
 body {
   font-family: system-ui, -apple-system, sans-serif;
+  font-size: 10px;
   line-height: 1.6;
   background-color: #dbdee9;
 }
