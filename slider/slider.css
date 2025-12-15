@@ -25,6 +25,7 @@ body {
 }
 
 .slider {
+  max-width: 1200px;
   border: 1px solid rgb(207, 198, 198);
   overflow-x: auto;
   overflow-y: hidden;
