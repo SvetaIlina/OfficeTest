@@ -14,15 +14,17 @@ body {
 body {
   font-family: system-ui, -apple-system, sans-serif;
   line-height: 1.6;
+  background: #2b3138;
 }
 
 .wrapper {
-  background: #2b3138;
   padding: 40px;
-  height: 100vh;
+  min-height: 100vh;
+  min-width: min-content;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: auto;
 }
 
 .scheme-title {
@@ -32,6 +34,7 @@ body {
   color: #9aa0a6;
 }
 .scheme {
+  width: 848px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: min-content;
@@ -171,11 +174,11 @@ body {
 }
 
 .scheme-item:nth-child(5)::after {
-  height: 295px;
+  height: 318px;
 }
 
 .scheme-item:nth-child(7)::after {
-  height: 560px;
+  height: 582px;
 }
 
 .scheme-item:nth-child(9)::after {
@@ -183,7 +186,7 @@ body {
 }
 
 .scheme-item:nth-child(13)::after {
-  height: 116px;
+  height: 139px;
 }
 
 /* right side rectangle*/
@@ -229,13 +232,12 @@ body {
 
 .scheme-item:nth-child(5)::before {
   left: -17px;
-  top: -272px;
+  top: -294px;
 }
 
 .scheme-item:nth-child(7)::before {
   left: -17px;
-
-  top: -537px;
+  top: -560px;
 }
 .scheme-item:nth-child(10)::before {
   left: -345px;
