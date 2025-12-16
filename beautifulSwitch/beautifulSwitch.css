@@ -82,7 +82,7 @@ label {
   height: 100%;
   background: linear-gradient(90deg, #57a732 50%, #bd2924 0);
   transform: translateX(-40%);
-  transition: transform 0.6s ease;
+  transition: transform 0.8s ease;
 }
 
 input:checked + label .switch-track-inner {
@@ -94,44 +94,42 @@ input:checked + label .switch-track-inner {
   height: 100%;
   aspect-ratio: 1;
   border-radius: 50%;
-  transition: all 0.6s ease;
+  transition: all 0.8s ease;
   top: 0;
   left: 1px;
-  background-color: #bd2924;
+  overflow: hidden;
 }
 
-.switch-thumb::before,
 .switch-thumb::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, #57a732 50%, #bd2924 0);
+  transform: translateX(-50%);
+  transition: transform 0.8s ease;
+  box-shadow: inset 4px 4px 28px rgba(0, 0, 0, 0.3);
+}
+
+.switch-thumb::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  border-radius: 50%;
-  transition: opacity 0.6s ease;
-  box-shadow: inset 0px 0px 12px rgba(0, 0, 0, 0.2);
-}
-
-.switch-thumb::before {
-  background: radial-gradient(at 65% 9%, #fff -35%, #bd2924 49%);
-  opacity: 1;
-}
-
-.switch-thumb::after {
-  background: radial-gradient(at 65% 9%, #fff -35%, #57a732 49%);
-  opacity: 0;
-}
-
-input:checked + label .switch-thumb::before {
-  opacity: 0;
-}
-
-input:checked + label .switch-thumb::after {
-  opacity: 1;
+  background: radial-gradient(at 65% 9%, #fff -35%, transparent 49%);
+  box-shadow: inset -1px 0px 28px rgba(0, 0, 0, 0.3);
+  z-index: 3;
 }
 
 input:checked + label .switch-thumb {
   left: 110px;
-  background-color: #57a732;
+}
+
+input:checked + label .switch-thumb::after {
+  transform: translateX(0);
 }
