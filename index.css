@@ -61,10 +61,6 @@ a {
   transition: transform 0.3s;
 }
 
-.case_card:last-child {
-  grid-column: 2;
-}
-
 .case_card:hover {
   transform: scale(1.1);
 }
